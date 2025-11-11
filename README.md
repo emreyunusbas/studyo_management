@@ -471,7 +471,7 @@ Bu proje aşağıdaki açık kaynak projeleri kullanmaktadır:
 ## 📈 Gelecek Özellikler
 
 - [x] Push notification entegrasyonu ✅
-- [ ] SMS entegrasyonu
+- [x] SMS entegrasyonu ✅
 - [ ] E-posta gönderimi
 - [ ] QR kod check-in
 - [ ] Online ödeme entegrasyonu

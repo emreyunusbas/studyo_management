@@ -234,6 +234,30 @@ export default function AppSettingsScreen() {
               />
             </View>
 
+            {/* SMS Settings Link */}
+            <TouchableOpacity
+              style={styles.smsManageCard}
+              onPress={() => router.push('/sms-settings' as any)}
+              activeOpacity={0.7}
+            >
+              <View style={styles.smsManageIcon}>
+                <MessageSquare size={24} color={Colors.warning} />
+              </View>
+              <View style={styles.manageInfo}>
+                <Text style={styles.smsManageTitle}>
+                  {language === 'tr'
+                    ? 'SMS Ayarlarını Yönet'
+                    : 'Manage SMS Settings'}
+                </Text>
+                <Text style={styles.smsManageDesc}>
+                  {language === 'tr'
+                    ? 'SMS sağlayıcı, şablonlar ve geçmiş'
+                    : 'SMS provider, templates and history'}
+                </Text>
+              </View>
+              <ChevronRight size={24} color={Colors.background} />
+            </TouchableOpacity>
+
             <View style={styles.settingItem}>
               <View style={styles.settingIcon}>
                 <MessageSquare size={20} color={Colors.warning} />
@@ -457,6 +481,38 @@ const styles = StyleSheet.create({
     color: Colors.background,
   },
   manageDesc: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: Colors.background,
+    opacity: 0.8,
+  },
+  smsManageCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+    backgroundColor: Colors.warning,
+    borderRadius: 16,
+    padding: 16,
+    shadowColor: Colors.warning,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 4,
+  },
+  smsManageIcon: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    backgroundColor: Colors.background,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  smsManageTitle: {
+    fontSize: 16,
+    fontWeight: '800',
+    color: Colors.background,
+  },
+  smsManageDesc: {
     fontSize: 12,
     fontWeight: '600',
     color: Colors.background,
