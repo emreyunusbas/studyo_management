@@ -50,6 +50,14 @@
         {
           "locationAlwaysAndWhenInUsePermission": "Uygulama stüdyonuzun konumunu tespit etmek için konum bilgilerine erişim istiyor."
         }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#B8FF3C",
+          "sounds": ["./assets/notification-sound.wav"]
+        }
       ]
     ],
     "experiments": {

@@ -178,6 +178,30 @@ export default function AppSettingsScreen() {
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>{t.notifications}</Text>
 
+            {/* Notification Settings Link */}
+            <TouchableOpacity
+              style={styles.manageCard}
+              onPress={() => router.push('/notification-settings' as any)}
+              activeOpacity={0.7}
+            >
+              <View style={styles.manageIcon}>
+                <Bell size={24} color={Colors.primary} />
+              </View>
+              <View style={styles.manageInfo}>
+                <Text style={styles.manageTitle}>
+                  {language === 'tr'
+                    ? 'Bildirim Ayarlarını Yönet'
+                    : 'Manage Notification Settings'}
+                </Text>
+                <Text style={styles.manageDesc}>
+                  {language === 'tr'
+                    ? 'İzinler, hatırlatmalar ve zamanlanmış bildirimler'
+                    : 'Permissions, reminders and scheduled notifications'}
+                </Text>
+              </View>
+              <ChevronRight size={24} color={Colors.textSecondary} />
+            </TouchableOpacity>
+
             <View style={styles.settingItem}>
               <View style={styles.settingIcon}>
                 <Smartphone size={20} color={Colors.primary} />
@@ -401,6 +425,42 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.primaryLight,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  manageCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+    backgroundColor: Colors.primary,
+    borderRadius: 16,
+    padding: 16,
+    shadowColor: Colors.primary,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 4,
+  },
+  manageIcon: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    backgroundColor: Colors.background,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  manageInfo: {
+    flex: 1,
+    gap: 4,
+  },
+  manageTitle: {
+    fontSize: 16,
+    fontWeight: '800',
+    color: Colors.background,
+  },
+  manageDesc: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: Colors.background,
+    opacity: 0.8,
   },
   settingItem: {
     flexDirection: 'row',

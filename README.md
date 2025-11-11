@@ -470,7 +470,7 @@ Bu proje aşağıdaki açık kaynak projeleri kullanmaktadır:
 
 ## 📈 Gelecek Özellikler
 
-- [ ] Push notification entegrasyonu
+- [x] Push notification entegrasyonu ✅
 - [ ] SMS entegrasyonu
 - [ ] E-posta gönderimi
 - [ ] QR kod check-in
