@@ -26,6 +26,7 @@ import {
   Vibrate,
   ChevronRight,
   Calendar,
+  Share2,
 } from 'lucide-react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Colors } from '@/constants/colors';
@@ -304,6 +305,30 @@ export default function AppSettingsScreen() {
               <ChevronRight size={24} color={Colors.background} />
             </TouchableOpacity>
 
+            {/* Social Media Settings Link */}
+            <TouchableOpacity
+              style={styles.socialManageCard}
+              onPress={() => router.push('/social-settings' as any)}
+              activeOpacity={0.7}
+            >
+              <View style={styles.socialManageIcon}>
+                <Share2 size={24} color={Colors.accent} />
+              </View>
+              <View style={styles.manageInfo}>
+                <Text style={styles.socialManageTitle}>
+                  {language === 'tr'
+                    ? 'Sosyal Medya Entegrasyonu'
+                    : 'Social Media Integration'}
+                </Text>
+                <Text style={styles.socialManageDesc}>
+                  {language === 'tr'
+                    ? 'Başarıları ve etkinlikleri paylaşın'
+                    : 'Share achievements and activities'}
+                </Text>
+              </View>
+              <ChevronRight size={24} color={Colors.background} />
+            </TouchableOpacity>
+
             <View style={styles.settingItem}>
               <View style={styles.settingIcon}>
                 <Bell size={20} color={Colors.accent} />
@@ -570,6 +595,38 @@ const styles = StyleSheet.create({
     color: Colors.background,
   },
   calendarManageDesc: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: Colors.background,
+    opacity: 0.8,
+  },
+  socialManageCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+    backgroundColor: Colors.accent,
+    borderRadius: 16,
+    padding: 16,
+    shadowColor: Colors.accent,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 4,
+  },
+  socialManageIcon: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    backgroundColor: Colors.background,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  socialManageTitle: {
+    fontSize: 16,
+    fontWeight: '800',
+    color: Colors.background,
+  },
+  socialManageDesc: {
     fontSize: 12,
     fontWeight: '600',
     color: Colors.background,

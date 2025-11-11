@@ -476,7 +476,7 @@ Bu proje aşağıdaki açık kaynak projeleri kullanmaktadır:
 - [x] QR kod check-in ✅
 - [ ] Online ödeme entegrasyonu
 - [x] Takvim senkronizasyonu ✅
-- [ ] Sosyal medya entegrasyonu
+- [x] Sosyal medya entegrasyonu ✅
 - [ ] Video içerik yönetimi
 - [ ] Çoklu stüdyo desteği
 - [ ] Admin paneli (Web)
