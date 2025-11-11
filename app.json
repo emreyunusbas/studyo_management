@@ -1,0 +1,51 @@
+{
+  "expo": {
+    "name": "PilatesSalon Yönetimi",
+    "slug": "studyo_management",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "scheme": "pilatessalon",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1A1D23"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.pilatessalon.management"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1A1D23"
+      },
+      "package": "com.pilatessalon.management",
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Uygulama profil fotoğrafı yüklemek için fotoğraf kütüphanenize erişim istiyor."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Uygulama stüdyonuzun konumunu tespit etmek için konum bilgilerine erişim istiyor."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

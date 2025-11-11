@@ -1,0 +1,173 @@
+/**
+ * Mock data for development and testing
+ */
+
+import { User, CountryCode, OnboardingSlide, LanguageOption, MemberListItem } from '@/types';
+
+// Mock user for development
+export const MOCK_USER: User = {
+  id: '1',
+  email: 'admin@neselipilates.com',
+  phone: '+905551234567',
+  role: 'ADMIN',
+  status: 'ACTIVE',
+  emailVerified: true,
+  phoneVerified: true,
+  name: 'Neseli',
+  surname: 'Pilates',
+  studioName: 'Neseli Pilates Stüdyo',
+  gender: 'female',
+  createdAt: new Date().toISOString(),
+  lastLoginAt: new Date().toISOString(),
+};
+
+// Country codes for phone input
+export const COUNTRY_CODES: CountryCode[] = [
+  { country: 'Türkiye', code: '+90', flag: '🇹🇷' },
+  { country: 'United States', code: '+1', flag: '🇺🇸' },
+  { country: 'United Kingdom', code: '+44', flag: '🇬🇧' },
+  { country: 'Germany', code: '+49', flag: '🇩🇪' },
+];
+
+// Onboarding slides
+export const ONBOARDING_SLIDES: OnboardingSlide[] = [
+  {
+    id: 1,
+    emoji: '👥',
+    title: 'Hızlı Üye Kaydı',
+    description: 'Yeni üyelerinizi saniyeler içinde sisteme ekleyin. Tüm bilgileri tek ekranda toplayın.',
+  },
+  {
+    id: 2,
+    emoji: '👨‍🏫',
+    title: 'Eğitmen Takibi',
+    description: 'Eğitmenlerinizin performansını izleyin, seans sayılarını ve üye memnuniyetini takip edin.',
+  },
+  {
+    id: 3,
+    emoji: '📊',
+    title: 'Detaylı Raporlar',
+    description: 'Stüdyonuzun finansal durumunu, üye katılımlarını ve trendleri analiz edin.',
+  },
+  {
+    id: 4,
+    emoji: '📅',
+    title: 'Seans Programı',
+    description: 'Seanslarınızı kolayca planlayın, üyelerinizi atayın ve değişiklikleri anında yapın.',
+  },
+  {
+    id: 5,
+    emoji: '📏',
+    title: 'Üye Ölçüm Takibi',
+    description: 'Üyelerinizin kilo, kas kütlesi ve vücut ölçümlerini kaydedip ilerlemelerini takip edin.',
+  },
+  {
+    id: 6,
+    emoji: '🥗',
+    title: 'Beslenme Programları',
+    description: 'Üyeleriniz için özel beslenme programları oluşturun ve paylaşın.',
+  },
+  {
+    id: 7,
+    emoji: '💬',
+    title: 'Anlık İletişim',
+    description: 'Üyelerinizle direkt mesajlaşın, seans notları paylaşın ve geri bildirim alın.',
+  },
+  {
+    id: 8,
+    emoji: '🔔',
+    title: 'Anlık Bildirimler',
+    description: 'Üyelerinize seans hatırlatmaları, ödeme bildirimleri ve özel mesajlar gönderin.',
+  },
+  {
+    id: 9,
+    emoji: '✅',
+    title: 'Gün Sonu Bekleyen İşler',
+    description: 'Günün sonunda yapılması gereken tüm işlemleri bir arada görün ve tamamlayın.',
+  },
+];
+
+// Language options
+export const LANGUAGE_OPTIONS: LanguageOption[] = [
+  { code: 'tr', name: 'Türkçe', flag: '🇹🇷' },
+  { code: 'en', name: 'English', flag: '🇬🇧' },
+];
+
+// Welcome screen mottos
+export const WELCOME_MOTTOS = [
+  'Sağlıklı yaşam, güçlü gelecek',
+  'Her hareket bir adım',
+  'Kendinize yatırım yapın',
+  'Güçlü vücut, güçlü zihin',
+  'Pilates ile yaşam kalitesi',
+  'Esneklik ve güç dengesi',
+  'Nefes al, hareket et, yaşa',
+  'Her gün yeni bir başlangıç',
+  'Vücudunuzu keşfedin',
+  'Hedeflerinize ulaşın',
+];
+
+// Mock members for development
+export const MOCK_MEMBERS: MemberListItem[] = [
+  {
+    id: '1',
+    firstName: 'Ayşe',
+    lastName: 'Yılmaz',
+    photoUrl: undefined,
+    membershipType: 'BİREBİR',
+    remainingCredits: 8,
+    openableCredits: 12,
+    endDate: '2025-12-31',
+    lastPaymentAmount: 1500,
+    remainingPayment: 0,
+  },
+  {
+    id: '2',
+    firstName: 'Mehmet',
+    lastName: 'Demir',
+    photoUrl: undefined,
+    membershipType: 'GRUP',
+    remainingCredits: 15,
+    openableCredits: 20,
+    endDate: '2025-11-30',
+    lastPaymentAmount: 1200,
+    remainingPayment: 400,
+  },
+  {
+    id: '3',
+    firstName: 'Zeynep',
+    lastName: 'Kaya',
+    photoUrl: undefined,
+    membershipType: 'DÜET',
+    remainingCredits: 6,
+    openableCredits: 10,
+    endDate: '2026-01-15',
+    lastPaymentAmount: 1800,
+    remainingPayment: 600,
+  },
+];
+
+// Week days (Turkish)
+export const WEEK_DAYS = ['Pt', 'Sa', 'Ça', 'Pe', 'Cu', 'Ct', 'Pz'];
+
+// Week days (Full Turkish)
+export const WEEK_DAYS_FULL = [
+  'Pazartesi',
+  'Salı',
+  'Çarşamba',
+  'Perşembe',
+  'Cuma',
+  'Cumartesi',
+  'Pazar',
+];
+
+// Mock weekly session data
+export const MOCK_WEEKLY_SESSIONS = [
+  { day: 'Pt', count: 8 },
+  { day: 'Sa', count: 6 },
+  { day: 'Ça', count: 10 },
+  { day: 'Pe', count: 7 },
+  { day: 'Cu', count: 9 },
+  { day: 'Ct', count: 5 },
+  { day: 'Pz', count: 4 },
+];
