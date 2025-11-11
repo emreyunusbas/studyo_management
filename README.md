@@ -472,7 +472,7 @@ Bu proje aşağıdaki açık kaynak projeleri kullanmaktadır:
 
 - [x] Push notification entegrasyonu ✅
 - [x] SMS entegrasyonu ✅
-- [ ] E-posta gönderimi
+- [x] E-posta gönderimi ✅
 - [ ] QR kod check-in
 - [ ] Online ödeme entegrasyonu
 - [ ] Takvim senkronizasyonu
