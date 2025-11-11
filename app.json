@@ -27,7 +27,15 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "name": "Pilates Salon Yönetimi",
+      "shortName": "Pilates Yönetim",
+      "description": "Modern ve kullanıcı dostu pilates stüdyo yönetim uygulaması",
+      "themeColor": "#B8FF3C",
+      "backgroundColor": "#0A0A0B",
+      "bundler": "metro",
+      "output": "static",
+      "lang": "tr"
     },
     "plugins": [
       "expo-router",
