@@ -40,6 +40,12 @@
     "plugins": [
       "expo-router",
       [
+        "expo-camera",
+        {
+          "cameraPermission": "Uygulama QR kod okutmak için kameraya erişim istiyor."
+        }
+      ],
+      [
         "expo-image-picker",
         {
           "photosPermission": "Uygulama profil fotoğrafı yüklemek için fotoğraf kütüphanenize erişim istiyor."

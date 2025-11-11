@@ -473,7 +473,7 @@ Bu proje aşağıdaki açık kaynak projeleri kullanmaktadır:
 - [x] Push notification entegrasyonu ✅
 - [x] SMS entegrasyonu ✅
 - [x] E-posta gönderimi ✅
-- [ ] QR kod check-in
+- [x] QR kod check-in ✅
 - [ ] Online ödeme entegrasyonu
 - [ ] Takvim senkronizasyonu
 - [ ] Sosyal medya entegrasyonu
