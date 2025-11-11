@@ -477,7 +477,7 @@ Bu proje aşağıdaki açık kaynak projeleri kullanmaktadır:
 - [ ] Online ödeme entegrasyonu
 - [x] Takvim senkronizasyonu ✅
 - [x] Sosyal medya entegrasyonu ✅
-- [ ] Video içerik yönetimi
+- [x] Video içerik yönetimi ✅
 - [ ] Çoklu stüdyo desteği
 - [ ] Admin paneli (Web)
 - [ ] İleri seviye analizler
