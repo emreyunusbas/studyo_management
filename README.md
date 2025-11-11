@@ -478,7 +478,7 @@ Bu proje aşağıdaki açık kaynak projeleri kullanmaktadır:
 - [x] Takvim senkronizasyonu ✅
 - [x] Sosyal medya entegrasyonu ✅
 - [x] Video içerik yönetimi ✅
-- [ ] Çoklu stüdyo desteği
+- [x] Çoklu stüdyo desteği ✅
 - [ ] Admin paneli (Web)
 - [ ] İleri seviye analizler
 - [ ] Export/Import özelliği
