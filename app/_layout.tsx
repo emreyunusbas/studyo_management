@@ -10,6 +10,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { AppProvider, useApp } from '@/contexts/AppContext';
 import { ClassProvider } from '@/contexts/ClassContext';
 import { BookingProvider } from '@/contexts/BookingContext';
+import { NotificationProvider } from '@/contexts/NotificationContext';
 import { Colors } from '@/constants/colors';
 
 /**
@@ -105,11 +106,13 @@ export default function RootLayout() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <SafeAreaProvider>
         <AppProvider>
-          <ClassProvider>
-            <BookingProvider>
-              <RootLayoutNav />
-            </BookingProvider>
-          </ClassProvider>
+          <NotificationProvider>
+            <ClassProvider>
+              <BookingProvider>
+                <RootLayoutNav />
+              </BookingProvider>
+            </ClassProvider>
+          </NotificationProvider>
         </AppProvider>
       </SafeAreaProvider>
     </GestureHandlerRootView>

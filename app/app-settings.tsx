@@ -25,6 +25,8 @@ import {
   Volume2,
   Vibrate,
   ChevronRight,
+  Calendar,
+  Share2,
 } from 'lucide-react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Colors } from '@/constants/colors';
@@ -178,6 +180,30 @@ export default function AppSettingsScreen() {
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>{t.notifications}</Text>
 
+            {/* Notification Settings Link */}
+            <TouchableOpacity
+              style={styles.manageCard}
+              onPress={() => router.push('/notification-settings' as any)}
+              activeOpacity={0.7}
+            >
+              <View style={styles.manageIcon}>
+                <Bell size={24} color={Colors.primary} />
+              </View>
+              <View style={styles.manageInfo}>
+                <Text style={styles.manageTitle}>
+                  {language === 'tr'
+                    ? 'Bildirim Ayarlarını Yönet'
+                    : 'Manage Notification Settings'}
+                </Text>
+                <Text style={styles.manageDesc}>
+                  {language === 'tr'
+                    ? 'İzinler, hatırlatmalar ve zamanlanmış bildirimler'
+                    : 'Permissions, reminders and scheduled notifications'}
+                </Text>
+              </View>
+              <ChevronRight size={24} color={Colors.textSecondary} />
+            </TouchableOpacity>
+
             <View style={styles.settingItem}>
               <View style={styles.settingIcon}>
                 <Smartphone size={20} color={Colors.primary} />
@@ -210,6 +236,30 @@ export default function AppSettingsScreen() {
               />
             </View>
 
+            {/* SMS Settings Link */}
+            <TouchableOpacity
+              style={styles.smsManageCard}
+              onPress={() => router.push('/sms-settings' as any)}
+              activeOpacity={0.7}
+            >
+              <View style={styles.smsManageIcon}>
+                <MessageSquare size={24} color={Colors.warning} />
+              </View>
+              <View style={styles.manageInfo}>
+                <Text style={styles.smsManageTitle}>
+                  {language === 'tr'
+                    ? 'SMS Ayarlarını Yönet'
+                    : 'Manage SMS Settings'}
+                </Text>
+                <Text style={styles.smsManageDesc}>
+                  {language === 'tr'
+                    ? 'SMS sağlayıcı, şablonlar ve geçmiş'
+                    : 'SMS provider, templates and history'}
+                </Text>
+              </View>
+              <ChevronRight size={24} color={Colors.background} />
+            </TouchableOpacity>
+
             <View style={styles.settingItem}>
               <View style={styles.settingIcon}>
                 <MessageSquare size={20} color={Colors.warning} />
@@ -230,6 +280,54 @@ export default function AppSettingsScreen() {
           {/* Preferences */}
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>{t.preferences}</Text>
+
+            {/* Calendar Settings Link */}
+            <TouchableOpacity
+              style={styles.calendarManageCard}
+              onPress={() => router.push('/calendar-settings' as any)}
+              activeOpacity={0.7}
+            >
+              <View style={styles.calendarManageIcon}>
+                <Calendar size={24} color={Colors.info} />
+              </View>
+              <View style={styles.manageInfo}>
+                <Text style={styles.calendarManageTitle}>
+                  {language === 'tr'
+                    ? 'Takvim Senkronizasyonu'
+                    : 'Calendar Synchronization'}
+                </Text>
+                <Text style={styles.calendarManageDesc}>
+                  {language === 'tr'
+                    ? 'Seansları takviminizle senkronize edin'
+                    : 'Sync sessions with your calendar'}
+                </Text>
+              </View>
+              <ChevronRight size={24} color={Colors.background} />
+            </TouchableOpacity>
+
+            {/* Social Media Settings Link */}
+            <TouchableOpacity
+              style={styles.socialManageCard}
+              onPress={() => router.push('/social-settings' as any)}
+              activeOpacity={0.7}
+            >
+              <View style={styles.socialManageIcon}>
+                <Share2 size={24} color={Colors.accent} />
+              </View>
+              <View style={styles.manageInfo}>
+                <Text style={styles.socialManageTitle}>
+                  {language === 'tr'
+                    ? 'Sosyal Medya Entegrasyonu'
+                    : 'Social Media Integration'}
+                </Text>
+                <Text style={styles.socialManageDesc}>
+                  {language === 'tr'
+                    ? 'Başarıları ve etkinlikleri paylaşın'
+                    : 'Share achievements and activities'}
+                </Text>
+              </View>
+              <ChevronRight size={24} color={Colors.background} />
+            </TouchableOpacity>
 
             <View style={styles.settingItem}>
               <View style={styles.settingIcon}>
@@ -401,6 +499,138 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.primaryLight,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  manageCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+    backgroundColor: Colors.primary,
+    borderRadius: 16,
+    padding: 16,
+    shadowColor: Colors.primary,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 4,
+  },
+  manageIcon: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    backgroundColor: Colors.background,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  manageInfo: {
+    flex: 1,
+    gap: 4,
+  },
+  manageTitle: {
+    fontSize: 16,
+    fontWeight: '800',
+    color: Colors.background,
+  },
+  manageDesc: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: Colors.background,
+    opacity: 0.8,
+  },
+  smsManageCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+    backgroundColor: Colors.warning,
+    borderRadius: 16,
+    padding: 16,
+    shadowColor: Colors.warning,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 4,
+  },
+  smsManageIcon: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    backgroundColor: Colors.background,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  smsManageTitle: {
+    fontSize: 16,
+    fontWeight: '800',
+    color: Colors.background,
+  },
+  smsManageDesc: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: Colors.background,
+    opacity: 0.8,
+  },
+  calendarManageCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+    backgroundColor: Colors.info,
+    borderRadius: 16,
+    padding: 16,
+    shadowColor: Colors.info,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 4,
+  },
+  calendarManageIcon: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    backgroundColor: Colors.background,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  calendarManageTitle: {
+    fontSize: 16,
+    fontWeight: '800',
+    color: Colors.background,
+  },
+  calendarManageDesc: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: Colors.background,
+    opacity: 0.8,
+  },
+  socialManageCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+    backgroundColor: Colors.accent,
+    borderRadius: 16,
+    padding: 16,
+    shadowColor: Colors.accent,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 4,
+  },
+  socialManageIcon: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    backgroundColor: Colors.background,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  socialManageTitle: {
+    fontSize: 16,
+    fontWeight: '800',
+    color: Colors.background,
+  },
+  socialManageDesc: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: Colors.background,
+    opacity: 0.8,
   },
   settingItem: {
     flexDirection: 'row',
