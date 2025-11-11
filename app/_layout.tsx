@@ -24,21 +24,17 @@ function RootLayoutNav() {
   useEffect(() => {
     if (isLoading) return;
 
-    // Check if user is in authenticated route
-    const inAuthGroup = segments[0] === '(tabs)' ||
-      segments[0] === 'members-list' ||
-      segments[0] === 'add-member' ||
-      segments[0] === 'finance' ||
-      segments[0] === 'trainers-menu' ||
-      segments[0] === 'sessions-menu' ||
-      segments[0] === 'settings';
+    // Define public routes that don't require authentication
+    const publicRoutes = ['welcome', 'login', 'register-select-role', 'register-studio', 'register-trainer', 'register-member', 'onboarding'];
+    const currentRoute = segments[0];
+    const isPublicRoute = !currentRoute || publicRoutes.includes(currentRoute);
 
-    // If user is not logged in and trying to access auth routes
-    if (!user && inAuthGroup) {
+    // If user is not logged in and trying to access protected routes
+    if (!user && !isPublicRoute) {
       router.replace('/welcome');
     }
-    // If user is logged in and on welcome/login page (but not onboarding)
-    else if (user && !inAuthGroup && segments[0] !== 'onboarding') {
+    // If user is logged in and on public route (except onboarding)
+    else if (user && isPublicRoute && currentRoute !== 'onboarding') {
       router.replace('/(tabs)');
     }
   }, [user, isLoading, segments]);

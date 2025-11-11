@@ -5,6 +5,7 @@
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Platform } from 'react-native';
 import { User, Branch } from '@/types';
 
 // Storage keys
@@ -61,6 +62,11 @@ export function AppProvider({ children }: AppProviderProps) {
    */
   const loadPersistedData = async () => {
     try {
+      // On web, use setTimeout to ensure storage is ready
+      if (Platform.OS === 'web') {
+        await new Promise(resolve => setTimeout(resolve, 100));
+      }
+
       const [storedUser, storedBranch, storedLanguage] = await Promise.all([
         AsyncStorage.getItem(STORAGE_KEYS.USER),
         AsyncStorage.getItem(STORAGE_KEYS.SELECTED_BRANCH),
@@ -80,6 +86,10 @@ export function AppProvider({ children }: AppProviderProps) {
       }
     } catch (error) {
       console.error('Error loading persisted data:', error);
+      // On web, if storage fails, continue without auth data
+      if (Platform.OS === 'web') {
+        console.log('Web platform: Continuing without persisted data');
+      }
     } finally {
       setIsLoading(false);
     }
