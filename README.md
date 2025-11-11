@@ -480,7 +480,7 @@ Bu proje aşağıdaki açık kaynak projeleri kullanmaktadır:
 - [x] Video içerik yönetimi ✅
 - [x] Çoklu stüdyo desteği ✅
 - [ ] Admin paneli (Web)
-- [ ] İleri seviye analizler
+- [x] İleri seviye analizler ✅
 - [ ] Export/Import özelliği
 - [ ] Backup/Restore sistemi
 
