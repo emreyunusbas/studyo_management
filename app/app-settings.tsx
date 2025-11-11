@@ -25,6 +25,7 @@ import {
   Volume2,
   Vibrate,
   ChevronRight,
+  Calendar,
 } from 'lucide-react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Colors } from '@/constants/colors';
@@ -279,6 +280,30 @@ export default function AppSettingsScreen() {
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>{t.preferences}</Text>
 
+            {/* Calendar Settings Link */}
+            <TouchableOpacity
+              style={styles.calendarManageCard}
+              onPress={() => router.push('/calendar-settings' as any)}
+              activeOpacity={0.7}
+            >
+              <View style={styles.calendarManageIcon}>
+                <Calendar size={24} color={Colors.info} />
+              </View>
+              <View style={styles.manageInfo}>
+                <Text style={styles.calendarManageTitle}>
+                  {language === 'tr'
+                    ? 'Takvim Senkronizasyonu'
+                    : 'Calendar Synchronization'}
+                </Text>
+                <Text style={styles.calendarManageDesc}>
+                  {language === 'tr'
+                    ? 'Seansları takviminizle senkronize edin'
+                    : 'Sync sessions with your calendar'}
+                </Text>
+              </View>
+              <ChevronRight size={24} color={Colors.background} />
+            </TouchableOpacity>
+
             <View style={styles.settingItem}>
               <View style={styles.settingIcon}>
                 <Bell size={20} color={Colors.accent} />
@@ -513,6 +538,38 @@ const styles = StyleSheet.create({
     color: Colors.background,
   },
   smsManageDesc: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: Colors.background,
+    opacity: 0.8,
+  },
+  calendarManageCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+    backgroundColor: Colors.info,
+    borderRadius: 16,
+    padding: 16,
+    shadowColor: Colors.info,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 4,
+  },
+  calendarManageIcon: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    backgroundColor: Colors.background,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  calendarManageTitle: {
+    fontSize: 16,
+    fontWeight: '800',
+    color: Colors.background,
+  },
+  calendarManageDesc: {
     fontSize: 12,
     fontWeight: '600',
     color: Colors.background,

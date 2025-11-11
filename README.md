@@ -475,7 +475,7 @@ Bu proje aşağıdaki açık kaynak projeleri kullanmaktadır:
 - [x] E-posta gönderimi ✅
 - [x] QR kod check-in ✅
 - [ ] Online ödeme entegrasyonu
-- [ ] Takvim senkronizasyonu
+- [x] Takvim senkronizasyonu ✅
 - [ ] Sosyal medya entegrasyonu
 - [ ] Video içerik yönetimi
 - [ ] Çoklu stüdyo desteği

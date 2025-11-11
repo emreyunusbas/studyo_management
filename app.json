@@ -40,6 +40,12 @@
     "plugins": [
       "expo-router",
       [
+        "expo-calendar",
+        {
+          "calendarPermission": "Uygulama seanslarınızı takviminize eklemek için takvim erişimi istiyor."
+        }
+      ],
+      [
         "expo-camera",
         {
           "cameraPermission": "Uygulama QR kod okutmak için kameraya erişim istiyor."
