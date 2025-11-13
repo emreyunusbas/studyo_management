@@ -36,8 +36,7 @@ export default function DashboardScreen() {
   const { user } = useApp();
 
   const handleNavigate = (route: string) => {
-    // router.push(route as any);
-    console.log('Navigate to:', route);
+    router.push(route as any);
   };
 
   // Calculate week number
@@ -114,7 +113,7 @@ export default function DashboardScreen() {
           {/* Sessions */}
           <TouchableOpacity
             style={[styles.gridCard, { width: cardWidth }]}
-            onPress={() => handleNavigate('/sessions-menu')}
+            onPress={() => handleNavigate('/(tabs)/classes')}
             activeOpacity={0.8}
           >
             <LinearGradient
@@ -129,7 +128,7 @@ export default function DashboardScreen() {
           {/* Finance */}
           <TouchableOpacity
             style={[styles.gridCard, { width: cardWidth }]}
-            onPress={() => handleNavigate('/finance')}
+            onPress={() => handleNavigate('/(tabs)/finance')}
             activeOpacity={0.8}
           >
             <LinearGradient
@@ -144,7 +143,7 @@ export default function DashboardScreen() {
           {/* Settings */}
           <TouchableOpacity
             style={[styles.gridCard, { width: cardWidth }]}
-            onPress={() => router.push('/settings')}
+            onPress={() => handleNavigate('/app-settings')}
             activeOpacity={0.8}
           >
             <LinearGradient
@@ -218,7 +217,7 @@ export default function DashboardScreen() {
           {/* Monthly Revenue */}
           <TouchableOpacity
             style={[styles.financialCard, { width: cardWidth }]}
-            onPress={() => handleNavigate('/payments-received')}
+            onPress={() => handleNavigate('/payment-history')}
             activeOpacity={0.8}
           >
             <Text style={styles.financialLabel}>Aylık Ciro</Text>
@@ -228,7 +227,7 @@ export default function DashboardScreen() {
           {/* Remaining Payments */}
           <TouchableOpacity
             style={[styles.financialCard, { width: cardWidth }]}
-            onPress={() => handleNavigate('/remaining-payments')}
+            onPress={() => handleNavigate('/payment-history')}
             activeOpacity={0.8}
           >
             <Text style={styles.financialLabel}>Kalan Ödemeler</Text>
